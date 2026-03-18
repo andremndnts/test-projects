@@ -13,7 +13,7 @@ function App() {
   const [showGreeting, setShowGreeting] = useState(false);
 
   function toggleButtonGreeting(){
-    // alert("Button Clicked!");
+
     if (showGreeting) {
       setShowGreeting(false);
     }else{
