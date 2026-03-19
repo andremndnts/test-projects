@@ -3,35 +3,46 @@ import { useState } from 'react';
 
 function App() {
 
-  const workout = Muscle();
-  const name = "Erand";
+  // const workout = Muscle();
+  // const name = "Erand";
   const age = 24;
   const greeting = "Good morning babyy! how's your sleep?";
 
-  // const showGreeting = false;
+  const [showGreeting, setShowGreeting] = useState("");
 
-  const [showGreeting, setShowGreeting] = useState(false);
+  const [name, setName] = useState("");
 
-  function toggleButtonGreeting(){
+    // function toggleButtonGreeting(){
 
-    if (showGreeting) {
-      setShowGreeting(false);
-    }else{
-      setShowGreeting(true);
-    }
-  }
+    //   if (showGreeting) {
+    //     setShowGreeting(false);
+    //   }else{
+    //     setShowGreeting(true);
+    //   }
+    // }
+
+    // function handleChange(event){
+    //   const value = event.target.value;
+    //   // console.log(value);
+    //   setName(value);
+
+    // }
 
 
   return (
+
     <div> 
-    
-        <button onClick={toggleButtonGreeting}>Click Me</button>
-        
+     
+      < ToDoList/>
+      
+      {/* <input type="text" placeholder="Enter password without typing" onChange={handleChange}/> */}
 
-        {showGreeting &&
+      {/* useState sample usage */}
+
+        {/* <button onClick={toggleButtonGreeting}>Click Me</button> */}
+        {/* {showGreeting &&
           <Greeting message={"Hi baby"} sender={"Erand"}/> 
-        }
-
+        } */}
 
         {/* < Greeting message={"Good morning"} sender={"Anonymouse"}/>
         < Greeting message={"How's your sleep?"} sender={"KUYA"}/>
@@ -41,20 +52,44 @@ function App() {
   )
 }
 
+function ToDoList(){
 
-function Muscle(){
-  return "Triceps";
-
-}
-
-function Greeting({message, sender}){
+  const todos = [
+    {id: 1, text: "Eat Eggs"},
+    {id: 2, text: "Go to the gym"},
+    {id: 3, text: "Chat to baby, say i love you"}
+  ]
 
   return (
     <div>
-      <h2>Hi! {message} from {sender}</h2>
-    </div>        
-  )
+      <h2>TO DO LIST</h2>
+      <ul>
+        {todos.map((todo) => (
+
+          <li key={todo.id}>{todo.text}</li>
+
+        ))}
+      </ul>
+
+    </div>
+  ) 
+
 }
+
+
+// function Muscle(){
+//   return "Triceps";
+
+// }
+
+// function Greeting({message, sender}){
+
+//   return (
+//     <div>
+//       <h2>Hi! {message} from {sender}</h2>
+//     </div>        
+//   )
+// }
 
 
 export default App
