@@ -4,56 +4,72 @@ import SignUpForm from './components/SignUpForm';
 
 function App() {
 
-  // const workout = Muscle();
-  // const name = "Erand";
-  const age = 24;
-  const greeting = "Good morning babyy! how's your sleep?";
-
-  const [showGreeting, setShowGreeting] = useState("");
-
-  const [name, setName] = useState(""); 
-
-    // function toggleButtonGreeting(){
-
-    //   if (showGreeting) {
-    //     setShowGreeting(false);
-    //   }else{
-    //     setShowGreeting(true);
-    //   }
-    // }
-
-    // function handleChange(event){
-    //   const value = event.target.value;
-    //   // console.log(value);
-    //   setName(value);
-
-    // } 
-
-
   return (
 
     <div> 
-     
-      < SignUpForm />
-
-      {/* < ToDoList/> */}
-      
-      {/* <input type="text" placeholder="Enter password without typing" onChange={handleChange}/> */}
-
-      {/* useState sample usage */}
-
-        {/* <button onClick={toggleButtonGreeting}>Click Me</button> */}
-        {/* {showGreeting &&
-          <Greeting message={"Hi baby"} sender={"Erand"}/> 
-        } */}
-
-        {/* < Greeting message={"Good morning"} sender={"Anonymouse"}/>
-        < Greeting message={"How's your sleep?"} sender={"KUYA"}/>
-        < Greeting message={"Nice"} sender={"BOI"}/> */}
-
+  
     </div>
   )
 }
+
+
+
+
+
+
+// =========================== PREVIOUS TESTS HERE =============
+// function App() {
+
+//   // const workout = Muscle();
+//   // const name = "Erand";
+//   const age = 24;
+//   const greeting = "Good morning babyy! how's your sleep?";
+
+//   const [showGreeting, setShowGreeting] = useState("");
+
+//   const [name, setName] = useState(""); 
+
+//     // function toggleButtonGreeting(){
+
+//     //   if (showGreeting) {
+//     //     setShowGreeting(false);
+//     //   }else{
+//     //     setShowGreeting(true);
+//     //   }
+//     // }
+
+//     // function handleChange(event){
+//     //   const value = event.target.value;
+//     //   // console.log(value);
+//     //   setName(value);
+
+//     // } 
+
+
+//   return (
+
+//     <div> 
+     
+//       < SignUpForm />
+
+//       {/* < ToDoList/> */}
+      
+//       {/* <input type="text" placeholder="Enter password without typing" onChange={handleChange}/> */}
+
+//       {/* useState sample usage */}
+
+//         {/* <button onClick={toggleButtonGreeting}>Click Me</button> */}
+//         {/* {showGreeting &&
+//           <Greeting message={"Hi baby"} sender={"Erand"}/> 
+//         } */}
+
+//         {/* < Greeting message={"Good morning"} sender={"Anonymouse"}/>
+//         < Greeting message={"How's your sleep?"} sender={"KUYA"}/>
+//         < Greeting message={"Nice"} sender={"BOI"}/> */}
+
+//     </div>
+//   )
+// }
 
 // function ToDoList(){
 

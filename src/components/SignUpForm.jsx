@@ -21,6 +21,7 @@ export default function SignUpForm(){
             <h1>Sign Up</h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>
+            
             <div style={{marginBottom: "1rem"}}>
                 <label>
                     Email
