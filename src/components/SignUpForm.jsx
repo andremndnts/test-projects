@@ -73,6 +73,8 @@ export default function SignUpForm(){
         </form>
             
         </div>
+
+        //RESUME TUTORIAL: 52:01 - https://www.youtube.com/watch?v=Wt3isV2irrA
     )
 
 
