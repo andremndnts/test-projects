@@ -1,19 +1,115 @@
 import './App.css'
 import { useState } from 'react';
 import SignUpForm from './components/SignUpForm';
+import { Routes, Route, Link } from 'react-router-dom';
 
-function App() {
 
-  return (
 
+
+export default function App() {
+
+  return ( 
     <div> 
+      <Navbar />
+
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/profile' element={<ProfilePage />}></Route>
+        <Route path='/login' element={<LoginPage />}></Route>
+
+        <Route path="*" element={<h1 style={{padding: "0 .15rem"}}>Not Found</h1>} />
+      </Routes>
+    
+
+    </div>
+  );
+}
+
+function Navbar(){
   
+  return (
+    <div>
+      <header style={{
+        padding: "1rem 1.5rem",
+        marginBottom: "1rem",
+        borderBottom: "1px solid #e5e7eb",
+        display: "flex",
+        justifyContent: "space-between"
+      }}>
+
+        <nav style={{display: "flex", gap: "1rem"}}>
+          <Link to="/">Home</Link>
+          <Link to="/profile">Profile</Link>
+        </nav>
+        
+        <div>
+          <Link to="/login">Login</Link>
+        </div>
+
+      </header>
     </div>
   )
 }
 
+function HomePage(){
+  return (
+    <div style={{padding: "0 1.5rem"}}>
+      <h1>HOME</h1>
+
+      <p>You are not logged in. Go to the login page to sign in.</p>
+    </div>
+  )
+}
+
+function ProfilePage(){
+
+  return (
+    <div style={{padding: "0 1.5rem"}}>
+
+      <h1>PROFILE PAGE</h1>
+      <p>Name: [name here]</p>
+      <p>Here you could show user info from the context</p>
+    </div>
+  )
+
+}
+
+function LoginPage(){
+
+}
 
 
+
+
+// BASIC ROUTING
+// function App() {
+
+//   return (
+
+//     <div> 
+
+//       <nav style={{display: 'flex', gap: "1rem", marginBottom: "1rem"}}>
+//         <Link to="/">Home</Link>
+//         <Link to="/about">About</Link>
+//       </nav>
+
+//       <Routes>
+//         <Route path="/" element={<HomePage />}/>
+//         <Route path="/about" element={<AboutPage />}/>
+//         <Route path="*" element={<h1>404 Not Found</h1>} />
+//       </Routes>
+
+//       <div>Footer</div>
+
+//     </div>
+//   );
+// }
+
+
+
+function AboutPage(){
+  return <h1>ABOUT PAGE</h1>
+}
 
 
 
@@ -111,4 +207,4 @@ function App() {
 // }
 
 
-export default App
+// export default App
