@@ -51,6 +51,9 @@ function Navbar(){
   )
 }
 
+// CONTINUE TUTORIAL - 1:01:34 - https://www.youtube.com/watch?v=Wt3isV2irrA
+
+
 function HomePage(){
   return (
     <div style={{padding: "0 1.5rem"}}>
