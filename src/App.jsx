@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react';
+import SignUpForm from './components/SignUpForm';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
 
   const [showGreeting, setShowGreeting] = useState("");
 
-  const [name, setName] = useState("");
+  const [name, setName] = useState(""); 
 
     // function toggleButtonGreeting(){
 
@@ -26,14 +27,16 @@ function App() {
     //   // console.log(value);
     //   setName(value);
 
-    // }
+    // } 
 
 
   return (
 
     <div> 
      
-      < ToDoList/>
+      < SignUpForm />
+
+      {/* < ToDoList/> */}
       
       {/* <input type="text" placeholder="Enter password without typing" onChange={handleChange}/> */}
 
@@ -52,29 +55,29 @@ function App() {
   )
 }
 
-function ToDoList(){
+// function ToDoList(){
 
-  const todos = [
-    {id: 1, text: "Eat Eggs"},
-    {id: 2, text: "Go to the gym"},
-    {id: 3, text: "Chat to baby, say i love you"}
-  ]
+//   const todos = [
+//     {id: 1, text: "Eat Eggs"},
+//     {id: 2, text: "Go to the gym"},
+//     {id: 3, text: "Chat to baby, say i love you"}
+//   ]
 
-  return (
-    <div>
-      <h2>TO DO LIST</h2>
-      <ul>
-        {todos.map((todo) => (
+//   return (
+//     <div>
+//       <h2>TO DO LIST</h2>
+//       <ul>
+//         {todos.map((todo) => (
 
-          <li key={todo.id}>{todo.text}</li>
+//           <li key={todo.id}>{todo.text}</li>
 
-        ))}
-      </ul>
+//         ))}
+//       </ul>
 
-    </div>
-  ) 
+//     </div>
+//   ) 
 
-}
+// }
 
 
 // function Muscle(){
