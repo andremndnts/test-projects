@@ -6,21 +6,27 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 
 
+// CONTINUE TUTORIAL - 1:08:07 - https://www.youtube.com/watch?v=Wt3isV2irrA
+
 export default function App() {
+
+  function login(name){
+    setUser=({name: name, isAuth: true})
+  }
 
   return ( 
     <div> 
       <Navbar />
 
+    <AuthContext.Provider value={{ user }}> 
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/profile' element={<ProfilePage />}></Route>
         <Route path='/login' element={<LoginPage />}></Route>
-
         <Route path="*" element={<h1 style={{padding: "0 .15rem"}}>Not Found</h1>} />
       </Routes>
-    
-
+    </AuthContext.Provider>
+  
     </div>
   );
 }
@@ -51,7 +57,6 @@ function Navbar(){
   )
 }
 
-// CONTINUE TUTORIAL - 1:01:34 - https://www.youtube.com/watch?v=Wt3isV2irrA
 
 
 function HomePage(){
@@ -70,7 +75,7 @@ function ProfilePage(){
     <div style={{padding: "0 1.5rem"}}>
 
       <h1>PROFILE PAGE</h1>
-      <p>Name: [name here]</p>
+      <p>Name: [name here]</p> 
       <p>Here you could show user info from the context</p>
     </div>
   )
@@ -78,6 +83,46 @@ function ProfilePage(){
 }
 
 function LoginPage(){
+
+  const [name, setName] = useState("");
+  const [user, setUser] = useState({name: "", isAuth: false});
+
+  function handleSubmit(e){
+    e.preventDefault();
+
+    if(!name.trim()) return;
+      setUser({name: name, isAuth: true});
+      // alert("login");
+  }
+
+  return (
+    <div style={{padding: "0 1.5rem"}}>
+      <h1>Login</h1>
+
+    <form onSubmit={handleSubmit} style={{marginTop: "1rem"}}>
+      <label>
+        Name
+
+        <input 
+          type="text"
+          placeholder="Type any name..."
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={{marginLeft: "0.5rem"}}
+        />
+
+      </label>
+
+      <button type="submit" style={{marginLeft: "0.5rem"}}>
+        Log in
+      </button>
+
+    </form>
+
+      {user.isAuth && <p>User Logged In</p>}
+    </div>
+  )
+
 
 }
 
