@@ -1,14 +1,16 @@
 import './App.css'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import SignUpForm from './components/SignUpForm';
 import { Routes, Route, Link } from 'react-router-dom';
-
-
+import AuthContext from "./AuthContext";
 
 
 // CONTINUE TUTORIAL - 1:08:07 - https://www.youtube.com/watch?v=Wt3isV2irrA
 
 export default function App() {
+
+  const [user, setUser] = useState({name: "", isAuth: false});
+
 
   function login(name){
     setUser=({name: name, isAuth: true})
@@ -18,7 +20,7 @@ export default function App() {
     <div> 
       <Navbar />
 
-    <AuthContext.Provider value={{ user }}> 
+    <AuthContext.Provider value={{ user, login }}> 
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/profile' element={<ProfilePage />}></Route>
@@ -85,13 +87,15 @@ function ProfilePage(){
 function LoginPage(){
 
   const [name, setName] = useState("");
-  const [user, setUser] = useState({name: "", isAuth: false});
+  // const [user, setUser] = useState({name: "", isAuth: false});
+  const { user, login} = useContext(AuthContext); 
+   
 
   function handleSubmit(e){
-    e.preventDefault();
 
+    e.preventDefault();
     if(!name.trim()) return;
-      setUser({name: name, isAuth: true});
+      login(name);
       // alert("login");
   }
 
