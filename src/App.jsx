@@ -5,6 +5,7 @@ export default function App(){
   
   const [count, setCount] = useState(0);
   const [showCounter, setShowCounter] = useState(false);
+  
   // Mounting -> Updating -> Unmounting
 
   // resume tutorial @ 1:21:19 | https://www.youtube.com/watch?v=Wt3isV2irrA
@@ -12,19 +13,46 @@ export default function App(){
   return(
     <div>
     
-    <button onClick={() => setShowCounter(!showCounter)}>
+    
+    {/* < CleanupExample /> */}
+   
+    {/* <button onClick={() => setShowCounter(!showCounter)}>
       {" "} 
       Show counter
     </button>
     
-    {showCounter && <Counter />}
+    {showCounter && <Counter />} */}
 
     </div>
   )
 
 }
 
-function Counter(){
+
+function CleanupExample(){
+
+  const [x, setX] = useState(0);
+
+  useEffect(() => {
+    function handleMove(e){
+      setX(e.clientX);
+    }
+
+    window.addEventListener("mousemove", handleMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMove);
+    };
+
+  }, []);
+
+  return <p>Mouse x: {x}</p>;
+}
+
+
+
+
+function Counter(){ 
 
   const [count, setCount] = useState(0); 
 
@@ -32,7 +60,7 @@ function Counter(){
     console.log("CUMM PONENT MOUNT");
 
       return () => {
-        console.log("CUMM PONENT MOUNT");        
+        console.log("CUMM PONENT UNMOUNTED");        
       }
 
   }, [])
